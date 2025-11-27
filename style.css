@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins';
+    font-family: 'poppins',sans-serif;
 }
 body {
     margin: 0;
@@ -74,6 +74,23 @@ font-size: 18px;
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    align-items: baseline;
+}
+
+.share-social a{
+    text-decoration: none;
+}
+
+.social{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 0.7rem;
+    border: none;
+    transition: transform 0.2s;
+}
+.social:hover{
+    transform: translateY(-2px);
 }
 
 #quote-btn{
