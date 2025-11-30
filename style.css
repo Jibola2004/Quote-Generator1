@@ -106,3 +106,36 @@ font-size: 18px;
 transform: translateY(-2px);
 box-shadow: 0 3px 6px rgba(26, 234, 99, 0.3);
 }
+
+/*toast style*/
+.toast {
+      visibility: hidden;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      min-width: 250px;
+      margin-left: -125px;
+      background-color: #f8f8f8;
+      color: #333;
+      text-align: center;
+      border-radius: 4px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      top: 30px;
+      font-size: 17px;
+      opacity: 0;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .toast.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .toast img{
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+    }

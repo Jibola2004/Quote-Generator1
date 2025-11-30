@@ -56,8 +56,12 @@ function facebookShare() {
 
   navigator.clipboard.writeText(quote)
     .then(() => {
-      alert("Quote copied! Open Facebook and paste it into your post.");
-      window.open("https://facebook.com", "_blank");
+      showToast("Quote copied to clipboard!")
+      setTimeout(function() {
+        document.getElementById("myToast").classList.remove("show");
+        window.open("https://facebook.com", "_blank");
+      }, 1000);
+      
     })
     .catch(err => {
       console.error("Failed to copy:", err);
@@ -71,14 +75,24 @@ function instagramShare() {
   
   navigator.clipboard.writeText(quote)
     .then(() => {
-      alert("Quote copied! Open Instagram and paste it into your Story or Post.");
-      window.open("https://instagram.com", "_blank");
+      showToast("Quote copied to clipboard!");
+      setTimeout(function() {
+        document.getElementById("myToast").classList.remove("show");
+        window.open("https://instagram.com", "_blank");
+      }, 1000);
+     // window.open("https://instagram.com", "_blank");
     })
     .catch(err => console.log("Copy failed", err));
 }
 
 
-
+function showToast(message) {
+      const toast = document.getElementById("myToast");
+      const text = document.getElementById("myToastText");
+      text.textContent=message;
+      toast.classList.add("show");
+      
+    }
 
 
 
@@ -86,3 +100,4 @@ function instagramShare() {
 // TODO: INTEGRATE WITH A POMODORO TIMER
 // TODO: INTEGRATE WITH A THIRD API TO GET THE QUOTES
 // TODO: CHANGE THE JS FILE TO A TYPESCRIPT FILE
+// todo: replace the alert with a toast. and a timeout to see the toast before moving to the next page.
